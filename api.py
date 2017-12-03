@@ -17,14 +17,14 @@ def prediction(ID):
     if fila.training_count < 50:
         return jsonify({
             'status': 'ok',
-			'type': 0,
+	    'type': 0,
             'data': {
                 'prediction': fila.tempo_medio_inicial
             },
         })
     return jsonify({
         'status': 'ok',
-		'type' : 1,
+	'type' : 1,
         'data': {
             'prediction': fila.regressor.predict([
                 [request.args["dia_da_semana"], request.args["hora_de_entrada"]]
