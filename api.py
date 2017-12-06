@@ -27,7 +27,7 @@ def prediction(ID):
 	'type' : 1,
         'data': {
             'prediction': fila.regressor.predict([
-                [request.args["dia_da_semana"], request.args["hora_de_entrada"]]
+                [request.args["dia_da_semana"], request.args["hora_de_entrada"], int(request.form["posicao"])]
             ])
         },
     })
@@ -36,7 +36,7 @@ def prediction(ID):
 def fit(ID):
     fila = filas[ID]
     fila.regressor.partial_fit([
-            [int(request.form["dia_da_semana"]), int(request.form["hora_de_entrada"])]
+            [int(request.form["dia_da_semana"]), int(request.form["hora_de_entrada"]), int(request.form["posicao"])]
         ],
         [int(request.form["tempo_de_espera_na_fila"])]
     )
