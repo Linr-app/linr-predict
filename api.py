@@ -47,7 +47,6 @@ def fit(ID):
     
 @app.route('/register/<int:ID>', methods=['POST'])
 def register(ID):
-    print('Request data:', request.form)
     tempo_medio_inicial = int(request.form['tempo_medio_inicial'])
     if ID not in filas:
         filas[ID] = Fila(tempo_medio_inicial)
