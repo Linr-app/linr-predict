@@ -12,6 +12,8 @@ Parâmetros de POST:
   
   hora_de_entrada         // Entre (0-1439), representa o minuto do dia, hora * 60 + minuto, 0 é 0:00.
   
+  posicao                 // Valor positivo, posicao na fila (pode começar em 0 ou 1, definir o critério e manter em todo projeto)
+  
 Saída:
 
     if casos_teste < 50:
@@ -25,9 +27,7 @@ Saída:
 	'status': 'ok',
 	'type' : 1,
 	'data': {
-		'prediction': fila.regressor.predict([
-		[request.args["dia_da_semana"], request.args["hora_de_entrada"]]
-		])
+		'prediction': função_previsor(params);
 	},
 
 
@@ -40,6 +40,8 @@ Parâmetros de POST:
   dia_da_semana           // Entre (0-6), representa o dia da semana, 0 é segunda.
   
   hora_de_entrada         // Entre (0-1439), representa o minuto do dia, hora * 60 + minuto, 0 é 0:00.
+  
+  posicao                 // Valor positivo, posicao na fila (pode começar em 0 ou 1, definir o critério e manter em todo projeto)
   
   tempo_de_espera_na_fila // Segundos
   
@@ -56,7 +58,7 @@ Parâmetros de link: ID_FILA
   
 Parâmetros de POST: 
 
-  tempo_medio_inicial // Tempo medio inicial, segundos.
+  tempo_medio_inicial 	   // Tempo medio inicial, segundos.
   
 Saída:
 
