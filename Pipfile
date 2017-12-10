@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[packages]
+click = "==6.7"
+Flask = "==0.12.2"
+itsdangerous = "==0.24"
+Jinja2 = "==2.9.6"
+MarkupSafe = "==1.0"
+numpy = "==1.13.3"
+scikit-learn = "==0.19.1"
+scipy = "==1.0.0"
+sklearn = "==0.0"
+Werkzeug = "==0.12.2"
